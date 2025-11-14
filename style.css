@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* ====== GLASSMORPHIC NAVBAR ====== */
+.navbar {
+  background: rgba(255, 255, 255, 0.15); /* light transparent layer */
+  backdrop-filter: blur(10px); /* frosted glass blur */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  justify-content: center !important; /* center all navbar content */
+  position: fixed; /* make header always visible */
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  padding: 10px 0;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.navbar-nav {
+  margin: 0 auto !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-nav .nav-item {
+  margin: 0 15px;
+}
+
+/* ====== NAV-LINK ROUND HIGHLIGHT ====== */
+.nav-link {
+  font-size: 18px;
+  position: relative;
+  display: inline-block;
+  color: #222;
+  padding: 8px 18px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background: rgba(8, 112, 117, 0.2); /* light teal tint */
+  backdrop-filter: blur(8px); /* subtle glass blur */
+  -webkit-backdrop-filter: blur(8px);
+  color: #087075;
+  box-shadow: 0 0 10px rgba(8, 112, 117, 0.3);
+}
+
+.navbar-brand {
+  display: none; /* optional: hides brand if you only want centered links */
+}
+
+/* ====== NAV HOVER EFFECT ====== */
+.nav-link::before {
+  transition: 300ms;
+  height: 3px;
+  content: "";
+  position: absolute;
+  border-radius: 5px;
+  background-color: #087075;
+}
+
+.nav-hover::before {
+  width: 0%;
+  bottom: 10px;
+}
+
+.nav-hover:hover::before {
+  width: 70%;
+}
+
+/* ====== BODY & SCROLLBAR ====== */
+body {
+  background-image: url("https://img.freepik.com/free-photo/blue-toned-collection-paper-sheets-with-copy-space_23-2148320445.jpg?w=900&t=st=1709066598~exp=1709067198~hmac=c5c0995a7289d90e1e59f33310d419716d3975cedc8f97a8f31c119f7619dcaf");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  font-family: "Fira Sans", sans-serif;
+}
+
+body::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar {
+  width: 7px;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #66dce2;
+}
+
+/* ====== HOME SECTION ====== */
+#home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#home a {
+  color: rgb(37, 35, 35);
+}
+#home p {
+  font-size: 25px;
+}
+#home i {
+  cursor: pointer;
+  transition: 0.5s;
+}
+#home i:hover {
+  color: rgb(146, 146, 0);
+}
+
+/* ====== SCROLL BUTTON ====== */
+#scrollBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+/* ====== SKILLS ====== */
+#skills i {
+  height: 100px;
+  width: 100px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#skills i:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+}
+
+/* ====== PROJECTS ====== */
+#projects .col-lg-4 {
+  padding: 20px;
+}
+#projects .card {
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 55px auto;
+  cursor: pointer;
+  position: relative;
+  color: white;
+}
+#projects .card-body {
+  position: absolute;
+  width: 100%;
+  height: 180%;
+  border-radius: 5px;
+  display: none;
+}
+#projects .card:hover .card-body {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* ====== EDUCATION ====== */
+#education .education {
+  cursor: pointer;
+  
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: rgba(46, 223, 193, 0.5);
+}
+#education .education:hover {
+  transform: scale(1.02);
+}
+
+/* ====== CERTIFICATIONS ====== */
+#certifications .card {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+#certifications .card:hover {
+  transform: scale(1.03);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#certifications img {
+  transition: transform 0.3s ease;
+}
+
+#certifications .card:hover img {
+  transform: scale(1.05);
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  #home img {
+    margin-bottom: 30px;
+    width: 200px;
+  }
+  #home .col-md-8 {
+    align-items: center;
+    text-align: center;
+    padding: 0px;
+  }
+  #home p {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  /* ✅ Keep navbar centered even on small screens */
+  .navbar-nav {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 370px) {
+  #home h1 {
+    font-size: 25px;
+  }
+}
